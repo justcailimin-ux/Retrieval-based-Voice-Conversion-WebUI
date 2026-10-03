@@ -104,9 +104,9 @@ class PreProcess:
                         idx1 += 1
                     else:
                         tmp_audio = audio[start:]
+                        self.norm_write(tmp_audio, output_key, idx1)
                         idx1 += 1
                         break
-            self.norm_write(tmp_audio, output_key, idx1)
             if should_report(progress_index, total):
                 println(
                     i18n("[数据切分] 进度：%s/%s | %s")
